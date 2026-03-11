@@ -8,7 +8,7 @@ public class Booking {
 
     @Id
     private int bookingId;
-
+//test
     private String name;
     private String date;
     private String status;
