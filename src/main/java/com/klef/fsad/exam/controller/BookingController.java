@@ -1,22 +1,28 @@
 package com.klef.fsad.exam.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
 
 import com.klef.fsad.exam.model.Booking;
-import com.klef.fsad.exam.repositary.BookingRepository;
+import com.klef.fsad.exam.service.BookingService;
 
-@Service
+@RestController
+@RequestMapping("/bookings")
 public class BookingController {
 
     @Autowired
-    private BookingRepository repository;
+    private BookingService service;
 
-    public Booking addBooking(Booking booking) {
-        return repository.save(booking);
+    // Add Booking
+    @PostMapping
+    public Booking addBooking(@RequestBody Booking booking) {
+        return service.addBooking(booking);
     }
 
-    public void deleteBooking(int id) {
-        repository.deleteById(id);
+    // Delete Booking
+    @DeleteMapping("/{id}")
+    public String deleteBooking(@PathVariable int id) {
+        service.deleteBooking(id);
+        return "Booking Deleted Successfully";
     }
 }

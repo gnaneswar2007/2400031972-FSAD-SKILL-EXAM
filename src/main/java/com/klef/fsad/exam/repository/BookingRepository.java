@@ -1,4 +1,4 @@
-package com.klef.fsad.exam.repositary;
+package com.klef.fsad.exam.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.klef.fsad.exam.model.Booking;

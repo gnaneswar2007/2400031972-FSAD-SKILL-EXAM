@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.klef.fsad.exam.model.Booking;
-import com.klef.fsad.exam.repositary.BookingRepository;
+import com.klef.fsad.exam.repository.BookingRepository;
 
 @Service
 public class BookingService {
